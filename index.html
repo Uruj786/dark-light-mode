@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM CLASS MODIFICATION</title>
+    <style>
+        .bg-tomato {
+            background-color: tomato;
+        }
+        .bg-orange {
+            background-color: orange;
+        }
+        .btn-rounded {
+            border-radius: 20px;
+            background-color: tomato;
+        }
+        .btn-squre {
+            border-radius: 5px;
+            background-color: orange;
+        }
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+        .theam-icon {
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .active {
+            border: 1px solid black;
+        }
+        .theam-dark {
+            background-color: black;
+            color: white;
+        }
+        .theam-light {
+            background-color: #f4a261;
+            color: dark;
+        }
+        .container-fluid {
+            display: block;
+            width: 50%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body id="body" class="container-fluid theam-light">
+    <div>
+        <img src="dark-mode.png" class="theam-icon" id="btn-dark" onclick="darkMode()">
+        <img src="brightness-and-contrast.png" class="theam-icon" id="btn-light" onclick="lightMode()">
+    </div>
+    <h1>This is light/Dark mode theme changer</h1>
+    <p class="lorem container-fluid row">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste est minima <br>
+        nesciunt aperiam incidunt dicta officiis distinctio,  <br>
+        tenetur dolores sunt iure modi nulla neque voluptatum quos, <br>
+        possimus, veritatis tempore blanditiis.
+    </p>
+    
+    <script>
+        function darkMode(){
+            const darkimg = document.getElementById('btn-dark');
+            darkimg.className = "theam-icon active";
+            const lightimg = document.getElementById("btn-light");
+            lightimg.classList.remove("active");
+            const body = document.getElementById("body");
+            body.className = "container-fluid theam-dark";
+        }
+        
+        function lightMode(){ 
+            const lightElement = document.getElementById('btn-light');
+            lightElement.className = "theam-icon active";
+            const darkimg = document.getElementById("btn-dark");
+            darkimg.classList.remove("active");
+            const body = document.getElementById("body");
+            body.className = "container-fluid theam-light";
+        }
+    </script>
+
+</body>
+</html>
